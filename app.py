@@ -14,13 +14,13 @@ from sklearn import metrics as mt
 import subprocess
 
 # Set the title of the web app
-st.title("Heart Attack Predictions")
+st.title("Heart Attack Analysis")
 
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
 
 #image
-image_heart = Image.open('heartclipart.jpg')
+image_heart = Image.open('heartclipart2.png')
 st.image(image_heart, width=100)
 
 # Sidebar for navigation
