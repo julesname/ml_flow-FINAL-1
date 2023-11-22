@@ -2,12 +2,7 @@ mlflow
 streamlit
 pandas
 numpy
-PIL import Image
-matplotlib.pyplot
+Pillow
+matplotlib
 seaborn
-sklearn.linear_model import LinearRegression
-sklearn.model_selection import train_test_split
-sklearn import metrics
-sklearn.metrics import r2_score
-sklearn import metrics as mt
-import subprocess
+scikit-learn
