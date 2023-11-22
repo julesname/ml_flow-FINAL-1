@@ -19,6 +19,10 @@ st.title("Heart Attack Predictions")
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
 
+#image
+image_heart = Image.open('heartclipart.jpg')
+st.image(image_heart, width=100)
+
 # Sidebar for navigation
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
 
