@@ -26,7 +26,8 @@ image_heart = Image.open('heartclipart2.png')
 st.image(image_heart, width=100)
 
 gif_path = 'HeartAttackImage.gif'
-st.image(gif_path, caption= 'Eat your veggies!’, width = 250)
+width=250
+st.image(gif_path, caption= "Eat your veggies!", width=width)
 
 # Sidebar for navigation
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
