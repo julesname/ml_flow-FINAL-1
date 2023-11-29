@@ -23,7 +23,7 @@ df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': '
 
 gif_path = 'HeartAttackImage.gif'
 width=250
-st.image(gif_path, caption= "## Eat your veggies!", width=width)
+st.image(gif_path, width=width)
 
 # Sidebar for navigation
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
