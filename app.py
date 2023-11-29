@@ -12,6 +12,7 @@ from sklearn import metrics
 from sklearn.metrics import r2_score
 from sklearn import metrics as mt
 import subprocess
+import pickle
 
 # Set the title of the web app
 st.title("Heart Attack Analysis")
@@ -76,11 +77,14 @@ if app_mode == "Prediction":
 if app_mode == 'Deployment':
     # Deployment page for model deployment
     st.markdown("# :violet[Deployment 🚀]")
-    id = st.text_input('ID Model', '/content/mlruns/1/0ad40de668d6475dab9dccad85438f40/artifacts/top_model_v1')
+    #id = st.text_input('ID Model', '/content/mlruns/1/0ad40de668d6475dab9dccad85438f40/artifacts/top_model_v1')
 
     # Load model for prediction
-    logged_model = f'./mlruns/1/a768fe9670c94e098f3ab45564f0db8d/artifacts/top_model_v1'
-    loaded_model = mlflow.pyfunc.load_model(logged_model)
+    #logged_model = f'./mlruns/1/a768fe9670c94e098f3ab45564f0db8d/artifacts/top_model_v1'
+    #loaded_model = mlflow.pyfunc.load_model(logged_model)
+    model_filename ='model.pkl'
+    with open(model_filename, 'rb') as file:
+      loaded_model = pickle.load(file)
 
 
 
