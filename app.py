@@ -19,10 +19,14 @@ st.title("Heart Attack Analysis")
 
 # Read the dataset
 df = pd.read_csv("heartStats.csv")
+df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect'})
 
 #image
 image_heart = Image.open('heartclipart2.png')
 st.image(image_heart, width=100)
+
+gif_path = 'HeartAttackImage.gif'
+st.image(gif_path, caption=‘Eat your veggies!’, use_column_width=True)
 
 # Sidebar for navigation
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
