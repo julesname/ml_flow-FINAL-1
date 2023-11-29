@@ -21,13 +21,9 @@ st.title("Heart Attack Analysis")
 df = pd.read_csv("heartStats.csv")
 df = df.rename(columns={'sex': 'Sex','age': 'Age','cp': 'Chest Pain','trtbps': 'Resting Blood Pressure','chol': 'Cholesterol','fbs': 'Fasting Blood Sugar','restecg': 'Resting ECG','thalachh': 'Maximum Heart Rate','exng': 'Exercise Induced Angina','oldpeak': 'Exercise-induced ST Depression','slp': 'Peak Exercise ST Segment','caa': '# of Major Vessels Covered By Fluoroscopy','thall': 'Thalassemia Reversable Defect'})
 
-#image
-image_heart = Image.open('heartclipart2.png')
-st.image(image_heart, width=100)
-
 gif_path = 'HeartAttackImage.gif'
 width=250
-st.image(gif_path, caption= "Eat your veggies!", width=width)
+st.image(gif_path, caption= "## Eat your veggies!", width=width)
 
 # Sidebar for navigation
 app_mode = st.sidebar.selectbox('Select page',['Introduction','Visualization','Prediction','Deployment'])
@@ -45,6 +41,10 @@ if app_mode == 'Introduction':
   totalmiss = dfnull.sum().round(2)
   st.write("Percentage of missing value in my dataset",totalmiss)
 
+  #image
+  image_heart = Image.open('heartclipart2.png')
+  st.image(image_heart, width=100)
+
 if app_mode == "Visualization":
   # Visualization page for plotting graphs
   list_variables = df.columns
@@ -56,6 +56,10 @@ if app_mode == "Visualization":
   df2 = df[[list_variables[0],list_variables[1],list_variables[2],list_variables[3]]]
   fig = sns.pairplot(df2)
   st.pyplot(fig)
+
+  #image
+  image_heart = Image.open('heartclipart2.png')
+  st.image(image_heart, width=100)
 
 if app_mode == "Prediction":
   # Prediction page to predict wine quality
@@ -78,6 +82,10 @@ if app_mode == "Prediction":
   mae = np.round(mt.mean_absolute_error(y_test, predictions ),2)
   mse = np.round(mt.mean_squared_error(y_test, predictions),2)
   r2 = np.round(mt.r2_score(y_test, predictions),2)
+
+  #image
+  image_heart = Image.open('heartclipart2.png')
+  st.image(image_heart, width=100)
 
 if app_mode == 'Deployment':
     # Deployment page for model deployment
@@ -118,3 +126,7 @@ if app_mode == 'Deployment':
     # Predict on a Pandas DataFrame.
     #import pandas as pd
     st.write("Prediction :", np.round(loaded_model.predict(data_new)[0],2))
+
+    #image
+    image_heart = Image.open('heartclipart2.png')
+    st.image(image_heart, width=100)
